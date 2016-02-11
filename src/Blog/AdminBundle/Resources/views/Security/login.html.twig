@@ -1,0 +1,22 @@
+{% extends "AdminBundle::layout.html.twig" %}
+
+{% block title %} Admin Login {% endblock %}
+
+{% block section %}
+
+    {% if error %}
+        <div> {{ error.messeage }}</div>
+    {% endif %}
+
+    <form action="{{ path('blog_admin_security_logincheck') }}">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="_username" value="{{ last_username }}">
+
+        <label for="password"> Password: </label>
+        <input type="password" id="password" name="_password">
+
+        <button type="submit"> Login</button>
+
+    </form>
+
+{% endblock %}
